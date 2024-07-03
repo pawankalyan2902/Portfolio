@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Webpage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #333;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            background: #eee;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #333;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Personal Webpage</h1>
+    </header>
+    <div class="container">
+        <div class="section" id="introduction">
+            <h2>Introduction</h2>
+            <p id="traits"></p>
+        </div>
+        <div class="section" id="education">
+            <h2>Education</h2>
+            <ul id="education-list"></ul>
+        </div>
+        <div class="section" id="skills">
+            <h2>Skills</h2>
+            <ul id="skills-list"></ul>
+        </div>
+        <div class="section" id="projects">
+            <h2>Projects</h2>
+            <ul id="projects-list"></ul>
+        </div>
+        <div class="section" id="certifications">
+            <h2>Certifications</h2>
+            <ul id="certifications-list"></ul>
+        </div>
+        <div class="section" id="internships">
+            <h2>Internships</h2>
+            <p id="internships-details"></p>
+        </div>
+        <div class="section" id="contact">
+            <h2>Contact</h2>
+            <p>You can reach me at: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 My Personal Webpage. All rights reserved.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const traits = "Flexible, Motivated, Reliable, Punctual and Organized.";
+            const education = [
+                { degree: "BE", institution: "Dayananda Sagar Academy of Technology", board: "Visvesvaraya Technological University", year: "2021 - Present", result: "" },
+                { degree: "P.U.C (PCME)", institution: "St. Joseph's Pre-University College", board: "Karnataka PU Board", year: "2019-2021", result: "89.95%" },
+                { degree: "S.S.L.C", institution: "Chinmaya Vidyalaya", board: "Karnataka Secondary Education Board", year: "2018-2019", result: "91.52%" }
+            ];
+            const skills = [
+                "Key fundamentals about HTML, CSS & JavaScript",
+                "Advanced CSS & JavaScript",
+                "Frontend vs Backend and how the two ends are connected",
+                "Knowledge about template engine such as ejs",
+                "In-depth backend development with NodeJS & the Express framework",
+                "How to integrate third-party packages and services into websites",
+                "Working with databases like (My)SQL and MongoDB (NoSQL)"
+            ];
+            const projects = [
+                "Website on Travel and Tourism which involves HTML, CSS",
+                "Tic Tac Toe Game developed using HTML, CSS, JavaScript",
+                "Dynamic Website where Technologies information can be shared developed using Backend as Node.js, Framework as express, Frontend using template engine ejs",
+                "Website on Blogs developed using DataBase NoSQL(MongoDB), Backend as Node.js, Framework as express, Frontend using template engine ejs",
+                "Shopping website developed using frontend HTML, CSS, JavaScript that includes template engine ejs for rendering files on server side; DataBase NoSQL(MongoDB), Backend as Node.js, Framework as express; in MVC pattern",
+                "To-Do website that involves API calls from one server to another using REST API concepts"
+            ];
+            const certifications = [
+                "NPTEL certifications on Programming in C",
+                "Python intermediate",
+                "R programming"
+            ];
+            const internships = "Full Stack Web Development, organized and handled by Varcons Technologies Pvt. Ltd";
+
+            document.getElementById('traits').textContent = traits;
+
+            const educationList = document.getElementById('education-list');
+            education.forEach(item => {
+                let li = document.createElement('li');
+                li.innerHTML = `<strong>${item.degree}</strong><br>${item.institution}<br>${item.board}, ${item.year}${item.result ? `, ${item.result}` : ''}`;
+                educationList.appendChild(li);
+            });
+
+            const skillsList = document.getElementById('skills-list');
+            skills.forEach(skill => {
+                let li = document.createElement('li');
+                li.textContent = skill;
+                skillsList.appendChild(li);
+            });
+
+            const projectsList = document.getElementById('projects-list');
+            projects.forEach(project => {
+                let li = document.createElement('li');
+                li.textContent = project;
+                projectsList.appendChild(li);
+            });
+
+            const certificationsList = document.getElementById('certifications-list');
+            certifications.forEach(cert => {
+                let li = document.createElement('li');
+                li.textContent = cert;
+                certificationsList.appendChild(li);
+            });
+
+            document.getElementById('internships-details').textContent = internships;
+        });
+    </script>
+</body>
+</html>
